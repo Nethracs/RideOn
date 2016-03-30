@@ -74,6 +74,8 @@ ul, ol{
 #tf-menu {
 	padding: 20px;
 	transition: all 0.8s;
+	background-color: #222222 !important;
+	padding: 0 !important;
 }
 #tf-menu.navbar-default {
 	background-color: rgba(248, 248, 248, 0);
@@ -92,7 +94,12 @@ font-weight: 900;
 	font-size: 12px;
 	letter-spacing: 1px;
 }
-.on {
+
+.ok{
+	padding: 10px !important;
+    background: none !important;
+}
+.abt {
 	background-color: #222222 !important;
 	padding: 0 !important;
 }
@@ -117,7 +124,7 @@ font-weight: 900;
 	}
 /* Home Style */
 #tf-home{
-	background: url(../img/rideshare.jpg);
+	background: url(../images/rideshare.jpg);
 	background-size:cover;
 	background-position:center;
 	background-attachment: fixed;
@@ -166,6 +173,7 @@ a.fa.fa-angle-down:hover{
 /* About Section */
 #tf-about{
 	padding: 80px 0;
+
 }
 ul.about-list{ margin: 30px 0 0 ;}
 ul.about-list li{

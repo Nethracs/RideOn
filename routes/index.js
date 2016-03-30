@@ -24,6 +24,13 @@ router.get('/testimonials', function(req, res, next) {
   res.render('testimonials', { title: 'Testimonials' });
 });
 
+
+/*Get Testimonials page */
+router.get('/team', function(req, res, next) {
+  res.render('team', { title: 'Team' });
+});
+
+
 router.get('/sample', function(req, res, next) {
   res.render('sample', { title: 'sample' });
 });

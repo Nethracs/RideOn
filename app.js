@@ -29,8 +29,10 @@ app.use('/about', routes);
 app.use('/clients', routes);
 app.use('/contact', routes);
 app.use('/portfolio', routes);
-app.use('/users', users);
+app.use('/team', routes)
 app.use('/sample', routes);
+app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
