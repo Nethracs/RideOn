@@ -14,12 +14,12 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Us' });
 });
 
-/*Get Testimonials page */
+/*Get Contact  page */
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Us' });
 });
 
-/*Get Contact page */
+/*Get Testimonials page */
 router.get('/testimonials', function(req, res, next) {
   res.render('testimonials', { title: 'Testimonials' });
 });
