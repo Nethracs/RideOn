@@ -24,5 +24,9 @@ router.get('/testimonials', function(req, res, next) {
   res.render('testimonials', { title: 'Testimonials' });
 });
 
+router.get('/sample', function(req, res, next) {
+  res.render('sample', { title: 'sample' });
+});
+
 
 module.exports = router;

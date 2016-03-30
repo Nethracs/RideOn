@@ -30,6 +30,7 @@ app.use('/clients', routes);
 app.use('/contact', routes);
 app.use('/portfolio', routes);
 app.use('/users', users);
+app.use('/sample', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
