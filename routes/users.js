@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
+var mongoose = require('mongoose'),
+var	passport = require('passport'),
+var user = mongoose.model('user');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
-module.exports = router;
+
+
+
+
