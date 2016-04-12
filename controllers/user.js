@@ -98,14 +98,14 @@ module.exports = function() {
           	console.log(err);
           	return done(err); }
           if (!user) {
-             console.log("Err1");
+          
             return done(null, false, { message: 'Incorrect username.' });
           }
           if (!user.validPassword(password)) {
-             console.log("Err2");
+            
             return done(null, false, { message: 'Incorrect password.' });
           }
-           console.log("Err3");
+      
           return done(null, user);
         });
     });

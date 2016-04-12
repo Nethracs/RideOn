@@ -135,10 +135,14 @@ module.exports = function(app, passport) {
         // render the page and pass in any flash data if it exists
         res.render('home', { message: req.flash('signupMessage') });
     });
-
+     app.get('/options', isLoggedIn, function(req, res) {
+        res.render('options.ejs', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
 
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/team', // redirect to the secure profile section
+        successRedirect : '/options', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -150,7 +154,7 @@ module.exports = function(app, passport) {
     // }));
 
 app.post('/login', passport.authenticate('local', { 
-  successRedirect: '/home',
+  successRedirect: '/options',
   failureRedirect: '/login',
   failureFlash : true // allow flash messages
    }));
@@ -186,7 +190,6 @@ app.get('/team', function(req, res) {
 
     
 };
-
 
 
 

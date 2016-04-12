@@ -17,7 +17,10 @@
           <h1>Welcome to <strong><span class="color">Ride-On</span></strong></h1>
           <p class="lead">Come ride with us and save <strong>Money, Environment &amp; Time</strong></p>
                 <!--<a href="#tf-about" class="fa fa-angle-down page-scroll"></a>-->
-          
+          <% if (typeof(message) != 'undefined' && message.length > 0) { %>
+                <div class="alert alert-danger"><% message %></div>
+                 <% } %>
+
           <div class="cotn_principal">
 
             <div class="cont_centrar">
@@ -39,10 +42,7 @@
                   <img src="http://ride.news/wp-content/uploads/2015/11/rideshare.jpg" alt="" />
                   </div>
                 </div>
-                 <% if (message.length > 0) { %>
-                <div class="alert alert-danger"><%= message %></div>
-                 <% } %>
-                <div class="cont_forms" >
+                                 <div class="cont_forms" >
                 <div class="cont_img_back_">
                   <img src="http://ride.news/wp-content/uploads/2015/11/rideshare.jpg" alt="" />
                 </div>

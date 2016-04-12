@@ -50,12 +50,7 @@ require('./routes/index')(app, passport);
 // app.use('/loggedin', routes);
 // app.use('/team', routes)
 
-var dropRestaurants = function(db, callback) {
-   db.collection('restaurants').drop( function(err, response) {
-      console.log(response)
-      callback();
-   });
-};
+
 
 
 
