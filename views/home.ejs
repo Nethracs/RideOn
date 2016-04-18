@@ -16,10 +16,7 @@
         <div class="content">
           <h1>Welcome to <strong><span class="color">Ride-On</span></strong></h1>
           <p class="lead">Come ride with us and save <strong>Money, Environment &amp; Time</strong></p>
-                <!--<a href="#tf-about" class="fa fa-angle-down page-scroll"></a>-->
-          <% if (typeof(message) != 'undefined' && message.length > 0) { %>
-                <div class="alert alert-danger"><% message %></div>
-                 <% } %>
+       
 
           <div class="cotn_principal">
 
@@ -49,7 +46,13 @@
                 <form method="post" action="/login">
                 <div class="cont_form_login">
                   <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                  
                   <h2>LOGIN</h2>
+                   <% if (typeof(loginmessage) != 'undefined' && loginmessage.length > 0) { %>
+                    <div class="login_error">
+                        <h5><%= loginmessage %></h5>
+                    </div>
+                    <% } %> 
                   <input type="text" id="email" name="email" placeholder="Email" />
                   <input type="password" id="password" name="password" placeholder="Password" />
                   <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
@@ -59,6 +62,11 @@
                 <div class="cont_form_sign_up">
                   <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
                   <h2>SIGN UP</h2>
+                   <% if (typeof(signupmessage) != 'undefined' && signupmessage.length > 0) { %>
+                    <div class="login_error">
+                        <h5><%= signupmessage %></h5>
+                    </div>
+                    <% } %> 
                  
                   <input type="text" id="email" name="email" placeholder="Email" />
                   <input type="text" id="username" name="username" placeholder="User" />

@@ -402,6 +402,14 @@ ol.type li a.active { font-weight: 700; }
 	position: relative;
 }
 
+.login_error{
+	color: black;
+    text-align: center;
+
+}
+
+
+
 .hover-bg .hover-text {
 	position: absolute;
 	text-align: center;

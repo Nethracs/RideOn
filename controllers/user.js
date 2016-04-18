@@ -54,8 +54,8 @@ module.exports = function() {
 
             // check to see if theres already a user with that email
             if (user) {
-                console.log("Here!!");
-                return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+                
+                return done(null, false, req.flash('signupMessage', 'This email is already taken.'));
             } else {
 
                 // if there is no user with that email          
@@ -90,20 +90,16 @@ module.exports = function() {
     },
       function(req,email, password, done) {
       	     process.nextTick(function() {
-                console.log("Err");
         User.findOne({ 'local.email': email}, function (err, user) {
           if (err) { 
-           
-
-          	console.log(err);
+          
           	return done(err); }
           if (!user) {
-          
-            return done(null, false, { message: 'Incorrect username.' });
+            return done(null, false, req.flash('loginMessage', 'Incorrect username'));
           }
           if (!user.validPassword(password)) {
-            
-            return done(null, false, { message: 'Incorrect password.' });
+
+            return done(null, false, req.flash('loginMessage', 'Incorrect password'));
           }
       
           return done(null, user);
