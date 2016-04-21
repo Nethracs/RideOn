@@ -12,6 +12,7 @@ module.exports = function(app, passport) {
 app.get('/', function(req, res) {
     
     if(isLoggedIn && typeof req.user !== 'undefined') {
+        console.log(req.user.local);
         res.render('index', { loginmessage: req.flash('loginMessage'), current_user: req.user.local });
     } else {
         res.render('index', { loginmessage: req.flash('loginMessage') });
@@ -43,7 +44,7 @@ app.get('/logout', function(req, res) {
 
 app.get('/options', function(req, res) {
     // render the page and pass in any flash data if it exists
-    res.render('options.ejs', { message: req.flash('loginMessage') }); 
+    res.render('options.ejs', { message: req.flash('loginMessage'),current_user: req.user.local} ); 
 });
 //Signup
 app.get('/login', function(req, res) {
@@ -60,9 +61,9 @@ app.get('/signup', function(req, res) {
 
 
 app.get('/options', isLoggedIn, function(req, res) {
-    res.render('options.ejs', {
-    user : req.user // get the user out of session and pass to template
-    });
+  
+    res.render('options.ejs', {current_user: req.user.local });
+
 });
 
 app.get('/needride', isLoggedIn, function(req, res) {

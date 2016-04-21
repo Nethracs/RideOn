@@ -64,8 +64,10 @@ module.exports = function() {
 
                 // set the user's local credentials
                 newUser.local.email    = email;
+                newUser.local.username    = req.body.username;
                 newUser.local.password = newUser.generateHash(password);
-
+                console.log(newUser.local.email);
+                console.log(newUser.local.username);
                 // save the user
                 newUser.save(function(err) {
                     if (err)
@@ -101,8 +103,8 @@ module.exports = function() {
 
             return done(null, false, req.flash('loginMessage', 'Incorrect password'));
           }
-      
-          return done(null, user);
+         console.log(user.local);
+          return done(null, user, {user: user.local});
         });
     });
       }

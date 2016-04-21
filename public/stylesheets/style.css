@@ -409,7 +409,13 @@ ol.type li a.active { font-weight: 700; }
 }
 
 
-
+.options
+{
+	padding-top: 100px;
+	
+	color:white; 
+	/*background-image: url('http://blog.blinds.com/wp-content/uploads/2012/08/Road-Trip.jpg');*/
+}
 .hover-bg .hover-text {
 	position: absolute;
 	text-align: center;

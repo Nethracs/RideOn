@@ -8,10 +8,15 @@
      
     </head>
     <body>
-            <% include partials/templates/header.ejs %>
-                <div>
-                        FHHJKJHJGJHJHKHHFHGFHGJGKKJHGJ  
-                </div>                
+             <% include partials/templates/header.ejs %>
+                <div class="text-center" style=" padding-top: 150px;">
+                        FHHJJHJGJHJHKHHFHGFHGJGKKJHGJ  
+                        <% if(typeof current_user !== 'undefined' && current_user.username != null) { %>
+                            <% console.log(current_user); %>
+                            <p> Hi, <%= current_user.username %> </p>
+                           <% } %>
+
+                </div>              
                    <div class="container content">
                         <div class="row">
                             <div class="Absolute-Center is-Responsive">
@@ -20,6 +25,7 @@
                                     <form action="/postride" method="get">
                                     <button class='dotted thick'>Post Ride</button>
                                     </form>
+                                    <br>
                                      <form action="/needride" method="get">
                                     <button class='dotted thick'>Need Ride</button>
                                     </form>
@@ -27,6 +33,5 @@
                             </div> 
                         </div>
                     </div>
-        
     </body>
 </html>
