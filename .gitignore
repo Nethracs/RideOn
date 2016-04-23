@@ -2,3 +2,25 @@
 data/journal/WiredTigerLog.0000000003
 
 data/journal/WiredTigerPreplog.0000000001
+
+*.wt
+
+*.turtle
+
+*.lock
+
+*.wt
+
+data/diagnostic.data/metrics.2016-03-30T15-55-46Z-00000
+
+data/diagnostic.data/metrics.interim
+
+data/journal/WiredTigerLog.0000000001
+
+data/journal/WiredTigerPreplog.0000000002
+
+data/journal/WiredTigerPreplog.0000000001
+
+data/storage.bson
+
+data/WiredTiger
