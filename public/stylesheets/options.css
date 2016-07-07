@@ -25,16 +25,26 @@ html, body {
   background-image: url('');
   background-size:100% auto;*/
   margin: 0;
-
  background-size: 1440px 800px;
  background-repeat:no-repeat;
  display: compact;
  font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+     background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url('../images/opt_back.jpg');
+    
+   
 }
+
+
+ 
+  
 html h1, body h1 {
   margin-top: -5rem;
   text-align: center;
-  color: #41403E;
+  color: #ffffcc;
   font-size: 3rem;
 }
 #content {
@@ -61,6 +71,20 @@ html section, body section {
   margin-bottom: 3rem;*/
 
 }
+#fonttmp{
+font-weight: 600;
+    font-size: 40px;
+    color: #ffffcc;
+}
+
+#bt1{
+margin-top: 20px;
+}
+
+#bt2{
+margin-top: 20px;
+}
+
 html section button, body section button {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
@@ -70,7 +94,7 @@ html section button, body section button {
   margin: 0 1rem;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  color: #41403E;
+  color: #ffffcc;
   font-size: 2rem;
   letter-spacing: 1px;
   outline: none;

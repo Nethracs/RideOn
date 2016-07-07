@@ -1,5 +1,5 @@
 
-
+var ride = require('../controllers/ride');
 module.exports = function(app, passport) {
 
     // =====================================
@@ -13,30 +13,23 @@ app.get('/', function(req, res) {
     
     if(isLoggedIn && typeof req.user !== 'undefined') {
         console.log(req.user.local);
-        res.render('index', { loginmessage: req.flash('loginMessage'), current_user: req.user.local });
+        res.render('home', { loginmessage: req.flash('loginMessage'), current_user: req.user.local });
     } else {
-        res.render('index', { loginmessage: req.flash('loginMessage') });
+        res.render('home', { loginmessage: req.flash('loginMessage') });
     }
 });
 
 
 
-
-
-
     
-app.get('/profile', isLoggedIn, function(req, res) {
-    res.render('profile.ejs', {
-        user : req.user // get the user out of session and pass to template
-    });
-});
+
 
 // =====================================
 // LOGOUT ==============================
 // =====================================
-app.get('/logout', function(req, res) {
+app.get('/signout', function(req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 
@@ -68,9 +61,21 @@ app.get('/options', isLoggedIn, function(req, res) {
 
 app.get('/needride', isLoggedIn, function(req, res) {
     res.render('needride.ejs', {
-    user : req.user // get the user out of session and pass to template
+    user : req.user ,// get the user out of session and pass to template
+    current_user: req.user.local 
     });
 });
+
+app.get('/postride', isLoggedIn, function(req, res) {
+    res.render('postride.ejs', {
+    user : req.user, // get the user out of session and pass to template
+    message: req.flash('postrideMessage'),
+    current_user: req.user.local 
+    });
+});
+
+
+
 
 app.post('/signup', passport.authenticate('local-signup', {
     successRedirect : '/options', // redirect to the secure profile section
@@ -85,28 +90,60 @@ app.post('/login', passport.authenticate('local', {
 }));
 
 
+
+app.post('/postride',isLoggedIn,function(req, res) {ride.postride(req,res)});
+app.post('/needride',isLoggedIn,function(req, res) {ride.needride(req,res)});
+
 /* GET home page. */
 app.get('/home', function(req, res) {
-  res.render('home', { title: 'index' });
+  
+  if(typeof req.user !== 'undefined' )
+  {
+    res.render('options', {current_user: req.user.local });
+  }
+  else
+    res.render('home', { title: 'index' });
 });
 /* GET About page */
 app.get('/about', function(req, res) {
+   if(typeof req.user !== 'undefined' )
+  {
+    res.render('about', {current_user: req.user.local });
+  }
+  else
   res.render('about', { title: 'About Us' });
 });
 
 /*Get Contact  page */
 app.get('/contact', function(req, res) {
+   if(typeof req.user !== 'undefined' )
+  {
+    res.render('contact', {current_user: req.user.local });
+  }
+  else
   res.render('contact', { title: 'Contact Us' });
 });
 
 /*Get Testimonials page */
 app.get('/testimonials', function(req, res) {
+     if(typeof req.user !== 'undefined' )
+  {
+    res.render('testimonials', {current_user: req.user.local });
+  }
+  else
+   
   res.render('testimonials', { title: 'Testimonials' });
 });
 
 
 /*Get Testimonials page */
 app.get('/team', function(req, res) {
+     if(typeof req.user !== 'undefined' )
+  {
+    res.render('team', {current_user: req.user.local });
+  }
+  else
+  
   res.render('team', { title: 'Team' });
 });
 

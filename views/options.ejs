@@ -10,23 +10,21 @@
     <body>
              <% include partials/templates/header.ejs %>
                 <div class="text-center" style=" padding-top: 150px;">
-                        FHHJJHJGJHJHKHHFHGFHGJGKKJHGJ  
                         <% if(typeof current_user !== 'undefined' && current_user.username != null) { %>
-                            <% console.log(current_user); %>
-                            <p> Hi, <%= current_user.username %> </p>
+                            
+                            <p id="fonttmp"> Hi, <%= current_user.username %> </p>
                            <% } %>
 
                 </div>              
                    <div class="container content">
-                        <div class="row">
+                        <div class="row-fluid">
                             <div class="Absolute-Center is-Responsive">
                                 <h1>Generous or Needy, we got a solution for all!!</h1>
                                 <section>
-                                    <form action="/postride" method="get">
+                                    <form action="/postride" method="get" class="span6" id="bt1">
                                     <button class='dotted thick'>Post Ride</button>
                                     </form>
-                                    <br>
-                                     <form action="/needride" method="get">
+                                     <form action="/needride" method="get" class="span6" id="bt2">
                                     <button class='dotted thick'>Need Ride</button>
                                     </form>
                                 </section>

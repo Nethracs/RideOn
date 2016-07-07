@@ -149,7 +149,7 @@ font-weight: 900;
 
 .content{
 	position: relative;
-	padding: 20% 0 0;
+	padding: 10% 0 0;
 }
 
 .color{
@@ -586,6 +586,15 @@ nav#footer p{
 	border-radius: 50%;
 	color: #8c8c8c;
 	transition: all 0.5s;
+}
+
+.ride_posted{
+	margin-top: 70px;
+	color: green;
+}
+
+.ride_posted h5{
+	font-size: 30px;
 }
 #footer i.fa:hover{
 	background: #FCAC45;

@@ -8,30 +8,61 @@
     <body>
         <% include partials/templates/header.ejs %>
         <h1>I need a ride</h1>
-        <div>
-            <form>
-                <div class="form-group1">
+         <form action="/needride" method="post" id="post_form">
+                <div class="row-fluid">
+                <div class="form-group1 span4">
                     <label for="source_loc">Source Location</label>
-                    <input type="text" class="form-control" id="source_loc" placeholder="Source">
+                    <input type="text" class="form-control" id="source" name="source" placeholder="Source">
                 </div>
-                <div class="form-group2">
+                <div class="form-group2 span4">
                     <label for="dest_loc">Destination Location</label>
-                    <input type="text" class="form-control" id="dest_loc" placeholder="Destination">
+                    <input type="text" class="form-control" id="destination" name ="destination" placeholder="Destination">
                 </div>
-                <div class="form-group3">
+                <div class="form-group3 datetimepicker span4">
                     <label for="date">Date</label>
-                    <input type="text" class="form-control" id="date" placeholder="MM/DD/YYYY">
+                    <input type="text" class="form-control" id="date" name="date"/><br>
                 </div>
-                <div class="form-group4">
-                    <label for="time">Time</label>
-                    <input type="text" class="form-control" id="time" placeholder="HH:MM (24hr-format)">
-                </div>
-            </form>
-        </div>
         <section>
+            <button type="submit" form="post_form" value="Submit" class='dotted thick'>Show Rides!</button>
             
-            <button class='dotted thick'>Show Rides</button>
         </section>
+            </div>
+        </form>
+        <% if(typeof rides !== 'undefined') { %>
+        <table style="width:100%">
+            <tr>
+                <th>Destination</th>
+                <th>Source</th>
+                <th>Time</th>
+                <th>Seats</th>
+                <th>Stops</th>
+                <th>Negotiable</th>
+                <th>Build</th>
+                <th>Name</th>
+                <th>Phone Number </th>
+                <th>Email</th>
+            </tr> 
+        <% for(var i=0; i <rides.length ; i++) { %>
+            <tr>
+                <td><%=rides[i].destination %></td>
+                <td><%=rides[i].source %></td> 
+                <td><%=rides[i].time %></td>
+                <td><%=rides[i].seats %></td>
+                <td><%=rides[i].stops %></td>
+                <td><%=rides[i].negotiable %></td>
+                <td><%=rides[i].build %></td>
+                <td><%=rides[i].name %></td>
+                <td><%=rides[i].pno %></td>
+                 <td><%=rides[i].email %></td>
+            </tr>
+        <% } %>
+    </table>
+        <% } %>
+        <script type="text/javascript">
+            $('#date').datetimepicker({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            });
+        </script>
         <% include partials/templates/footer.ejs %>
     </body>
 </html>

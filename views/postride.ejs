@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/templates/head.ejs %>
+    <title>Post Ride</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheets_page2.css"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <% if (typeof message !== 'undefined') { %>
+                    <div class="ride_posted">
+                        <h5><%= message %></h5>
+                    </div>
+            <% } %> 
+            <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+                <% include partials/templates/header.ejs %>
+            </nav>
+        <h1>I have space</h1>
+         <form method="post" id="post_form" action="/postride"> 
+        <div class="row-fluid">
+                <div class="form-group2 span6">
+                    <label for="dest_loc">Source</label>
+                    <input type="text" class="form-control" id="source"  name="source" placeholder="Source"/>
+                </div>
+                <div class="form-group1 span6">
+                    <label for="source_loc">Destination</label>
+                    <input type="text" class="form-control" id="destination" name="destination" placeholder="Destination">
+                </div>
+        </div>
+        <div class="row-fluid">
+        
+        <div class="form-group3 span12 datetimepicker">
+                <label>Date</label>
+                <input type="text" class=" form-control" id ="date" name="date" /><br>
+        </div>
+        </div>
+        <div class="row-fluid">
+     
+            <div class="form-group5 span6">
+                <label for="seat_num">Seats</label>
+                <input type="text" class="form-control" id="seats" name="seats" placeholder="Number of Seats">
+            </div>
+            <div class="form-group6 span6">
+                <label for="stops_num">Stops in Between</label>
+                <input type="text" class="form-control" id="stops" name="stops" placeholder="Number of Stops">
+            </div>
+      
+        </div>
+         <div class="row-fluid">
+        <div class="form-group7 ">
+            <label for="negotiable" >Negotiable</label><br>
+            <label><input type="radio" name="negotiable" value="yes" /> Yes</label> <br>
+            <label><input type="radio" name="negotiable" value="no" /> No</label>
+        </div>
+        </div>
+        <div class="row-fluid">
+        <div class="form-group8">
+            <label for="build">Vehicle Built</label><br>
+            <label><input type="radio" name="build" value="sedan" /> Sedan</label> <br>
+            <label><input type="radio" name="build" value="suv" /> SUV</label> <br>
+            <label><input type="radio" name="build" value="hatchback" /> Hatchback</label> <br>
+            <label><input type="radio" name="build" value="other" /> other</label> <br>
+        </div>
+       </div>
+
+
+        <h2>Personal Details of Driver</h2>
+        <div>
+                <div class="form-group9">
+                    <label for="seat_num">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Ex: Ali">
+                </div>
+                <div class="form-group10">
+                    <label for="stops_num">Phone No.</label>
+                    <input type="text" class="form-control" id="pno" name="pno" placeholder="Ex: 9899092224">
+                </div
+                <div class="form-group11">
+                    <label for="stops_num">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Ex: someone@abc.com">
+                </div>
+          
+        </div>
+        
+        <section>
+            
+            <button type="submit" form="post_form" value="Submit" class='dotted thick'>Post it!</button>
+        </section>
+     </form> 
+       </div> 
+        <script type="text/javascript">
+            // $('.datetimepicker').datetimepicker()({
+            //     format: 'yyyy-mm-dd hh:ii'
+            // });
+            $('#date').datetimepicker({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            });
+        </script>
+        <% include partials/templates/footer.ejs %>
+
+    </body>
+</html>

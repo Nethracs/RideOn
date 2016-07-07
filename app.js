@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://admin:admin@jello.modulusmongo.net:27017/omo7jEju');
 var passport = require('passport');
 var model = require('./model/user');
+
 var app = express();
 var flash    = require('connect-flash');
 //var routes = require('./routes/index')app, passport);
@@ -18,7 +19,7 @@ var session      = require('express-session');
 
 var router = express.Router();
 app.use(router);
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' }));
+app.use(session({ secret: 'mysession' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());

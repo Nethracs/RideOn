@@ -32,33 +32,38 @@ html h1, body h1 {
 }
 
 .form-group1 {
-  margin-top: -2rem;
-  text-align: center;
+  text-align: left;
   color: #41403E;
   font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+   /* padding-left: 230px;*/
 }
 
 .form-group2 {
-  margin-top: -2rem;
-  text-align: center;
+  text-align: right;
   color: #41403E;
   font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+   /* padding-right: 250px;*/
 }
+
 .form-group3 {
-  margin-top: -2rem;
-  text-align: center;
+ 
+  text-align: left;
+  position: relative;
   color: #41403E;
   font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+    /*padding-left: 230px;*/
 }
+
 .form-group4 {
-  margin-top: -2rem;
-  text-align: center;
+
+  text-align: right;
   color: #41403E;
   font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+    /*padding-left: 230px;*/
 }
 
 

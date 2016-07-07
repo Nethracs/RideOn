@@ -3,23 +3,27 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-       <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-      </button> -->
-      <a class="navbar-brand" href="/home">Ride-On</a>
+      </button> 
+      
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <a class="navbar-brand" href="/home">Ride-On</a>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/home" class="page-scroll">Home</a></li>
         <li><a href="/about" class="page-scroll">About Us</a></li>
         <li><a href="/contact" class="page-scroll">Contact Us</a></li>
         <li><a href="/team" class="page-scroll">Team</a></li>
         <li><a href="/testimonials" class="page-scroll">Testimonials</a></li>
+         <% if(typeof current_user !== 'undefined' && current_user.username != null) { %>
+         <li><a href="/signout" class="page-scroll">Signout</a></li>
+        <% } %>
       </ul>
     </div><!-- /.navbar-collapse -->
    </nav> 
